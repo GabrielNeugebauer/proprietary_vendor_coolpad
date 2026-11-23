@@ -16,7 +16,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),CP8298_I00)
+# me1ds (LG K130) reuses these MT6735 blobs
+ifneq ($(filter CP8298_I00 me1ds,$(TARGET_DEVICE)),)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libnvram
